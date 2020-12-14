@@ -836,7 +836,7 @@ self: super:
 
   pyopenssl = super.pyopenssl.overridePythonAttrs (
     old: {
-      buildInputs = old.buildInputs ++ [ pkgs.openssl ];
+      buildInputs = (old.buildInputs or []) ++ [ pkgs.openssl ];
     }
   );
 
