@@ -321,7 +321,7 @@ self: super:
 
   isort = super.isort.overridePythonAttrs (
     old: {
-      propagatedBuildInputs = old.propagatedBuildInputs ++ [ self.setuptools ];
+      propagatedBuildInputs = (old.propagatedBuildInputs or []) ++ [ self.setuptools ];
     }
   );
 
